@@ -29,6 +29,6 @@ public class BueroArbeiterTest {
 
     @Test
     public void testEinkommen() {
-        assertEquals(bueroArbeiter.getFestgehalt(), 5000, 0);
+        assertEquals(bueroArbeiter.einkommen(), 5000, 0);
     }
 }

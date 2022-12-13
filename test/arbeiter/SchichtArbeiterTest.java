@@ -31,19 +31,35 @@ public class SchichtArbeiterTest {
 
     @Test
     public void testEinkommen() {
+        System.out.println("1");
         assertEquals(560, schichtArbeiter.einkommen(), 0); //festgehalt + bonuszahlung
     }
 
     @Test
     public void testGehaltComparator() {
+        Mitarbeiter.MitarbeiterComparator comp = new Mitarbeiter.MitarbeiterComparator();
         SchichtArbeiter schichtArbeiterMehrGeld = new SchichtArbeiter(3002, "zed", 15);
         schichtArbeiterMehrGeld.setAnzahlStunden(40);
         SchichtArbeiter schichtArbeiterWenigerGeld = new SchichtArbeiter(3002, "Pascal", 0);
         schichtArbeiterWenigerGeld.setAnzahlStunden(40);
         SchichtArbeiter schichtArbeiterGleichGeld = new SchichtArbeiter(3002, "Patrik", 14);
         schichtArbeiterGleichGeld.setAnzahlStunden(40);
-        assertEquals(1, schichtArbeiter.compareTo(schichtArbeiterWenigerGeld), "Mehr Geld");
-        assertEquals(0, schichtArbeiter.compareTo(schichtArbeiterGleichGeld), "Gleiches Geld");
-        assertEquals(-1, schichtArbeiter.compareTo(schichtArbeiterMehrGeld), "Weniger Geld");
+        assertEquals(-1, comp.compare(schichtArbeiter,schichtArbeiterMehrGeld), "Mehr Geld");
+        assertEquals(0, comp.compare(schichtArbeiter, schichtArbeiterGleichGeld), "Gleiches Geld");
+        assertEquals(1, comp.compare(schichtArbeiter, schichtArbeiterWenigerGeld), "Weniger Geld");
     }
+
+    @Test
+    public void testNameCompare() {
+        SchichtArbeiter schichtArbeiterkleinerName = new SchichtArbeiter(3002, "Alf", 15);
+        schichtArbeiterkleinerName.setAnzahlStunden(40);
+        SchichtArbeiter schichtArbeiterGleicherName= new SchichtArbeiter(3002, "Pascal", 0);
+        schichtArbeiterGleicherName.setAnzahlStunden(40);
+        SchichtArbeiter schichtArbeiterGrosserName = new SchichtArbeiter(3002, "zed", 14);
+        schichtArbeiterGrosserName.setAnzahlStunden(40);
+        assertTrue( schichtArbeiter.compareTo(schichtArbeiterkleinerName) > 0, "Mehr Geld");
+        assertTrue( schichtArbeiter.compareTo(schichtArbeiterGleicherName) == 0, "Gleiches Geld");
+        assertTrue( schichtArbeiter.compareTo(schichtArbeiterGrosserName) < 0, "Weniger Geld");
+    }
+
 }
