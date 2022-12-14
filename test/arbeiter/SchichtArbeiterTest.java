@@ -40,6 +40,7 @@ public class SchichtArbeiterTest {
         Mitarbeiter.MitarbeiterComparator comp = new Mitarbeiter.MitarbeiterComparator();
         SchichtArbeiter schichtArbeiterMehrGeld = new SchichtArbeiter(3002, "zed", 15);
         schichtArbeiterMehrGeld.setAnzahlStunden(40);
+        //jjjjj
         SchichtArbeiter schichtArbeiterWenigerGeld = new SchichtArbeiter(3002, "Pascal", 0);
         schichtArbeiterWenigerGeld.setAnzahlStunden(40);
         SchichtArbeiter schichtArbeiterGleichGeld = new SchichtArbeiter(3002, "Patrik", 14);
