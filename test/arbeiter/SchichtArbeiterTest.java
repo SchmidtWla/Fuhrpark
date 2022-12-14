@@ -41,6 +41,7 @@ public class SchichtArbeiterTest {
         SchichtArbeiter schichtArbeiterMehrGeld = new SchichtArbeiter(3002, "zed", 15);
         schichtArbeiterMehrGeld.setAnzahlStunden(40);
         //jjjjj
+        //NOch mehr dummes Zeug
         SchichtArbeiter schichtArbeiterWenigerGeld = new SchichtArbeiter(3002, "Pascal", 0);
         schichtArbeiterWenigerGeld.setAnzahlStunden(40);
         SchichtArbeiter schichtArbeiterGleichGeld = new SchichtArbeiter(3002, "Patrik", 14);
