@@ -42,7 +42,7 @@ public class SchichtArbeiterTest {
         schichtArbeiterWenigerGeld.setAnzahlStunden(40);
         SchichtArbeiter schichtArbeiterGleichGeld = new SchichtArbeiter(3002, "Patrik", 14);
         schichtArbeiterGleichGeld.setAnzahlStunden(40);
-        assertEquals(0, schichtArbeiter.compareGehalt(schichtArbeiterWenigerGeld), "Mehr Geld");
+        assertEquals(1, schichtArbeiter.compareGehalt(schichtArbeiterWenigerGeld), "Mehr Geld");
         assertEquals(0, schichtArbeiter.compareGehalt(schichtArbeiterGleichGeld), "Gleiches Geld");
         assertEquals(-1, schichtArbeiter.compareGehalt(schichtArbeiterMehrGeld), "Weniger Geld");
 
